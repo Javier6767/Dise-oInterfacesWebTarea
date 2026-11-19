@@ -24,13 +24,45 @@ body {
 
 .site-header {
   justify-content: center;
-  padding-block: 28px;
+  flex-direction: column;
+  padding: 28px 0 0;
   background: #bb8fce;
 }
 
+.main-nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  margin-top: 20px;
+  border-top: 1px solid rgba(82, 97, 92, 0.35);
+}
+
+.main-nav span {
+  padding: 10px 8px;
+  text-align: center;
+  border-right: 1px solid rgba(82, 97, 92, 0.35);
+}
+
+.main-nav span:last-child {
+  border-right: 0;
+}
+
 .site-footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
   background: #bb8fce;
   color: #52615c;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social a {
+  color: #52615c;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .brand {
@@ -116,50 +148,19 @@ body {
   object-fit: cover;
 }
 
-.skatepark-item h3 {
+.skatepark-info {
   flex: 1;
-  margin: 0;
+}
+
+.skatepark-info h3 {
+  margin: 0 0 8px;
   font-size: 1.5rem;
 }
 
-.site-footer a {
-  color: inherit;
-  text-decoration: none;
+.skatepark-info p {
+  margin: 0;
 }
 
-.site-footer a:hover {
-  text-decoration: underline;
-}
-
-main {
-  flex: 1;
-}
-
-/* =========================================================
-   NAVEGACIÓN
-   ========================================================= */
-.main-nav {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  width: 100%;
-  margin-top: 18px;
-  border-block: 1px solid rgba(82, 97, 92, 0.35);
-}
-
-.main-nav span {
-  padding: 10px 8px;
-  text-align: center;
-  font-weight: 700;
-  border-right: 1px solid rgba(82, 97, 92, 0.35);
-}
-
-.main-nav span:last-child {
-  border-right: 0;
-}
-
-/* =========================================================
-   TIENDAS
-   ========================================================= */
 .tiendas {
   width: min(1100px, 90%);
   margin: 56px auto;
@@ -171,53 +172,27 @@ main {
 
 .tiendas-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
 .tienda-card {
-  overflow: hidden;
-  border: 1px solid rgba(82, 97, 92, 0.25);
-  background: rgba(255, 255, 255, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .tienda-foto {
   width: 100%;
   aspect-ratio: 4 / 3;
-  background-position: center;
-  background-size: cover;
-}
-
-.tienda-card:nth-child(1) .tienda-foto {
-  background-image: url("../imagenes/onefoot.jpg");
-}
-
-.tienda-card:nth-child(2) .tienda-foto {
-  background-image: url("../imagenes/distritorojo.jpg");
-}
-
-.tienda-card:nth-child(3) .tienda-foto {
-  background-image: url("../imagenes/cerra.jpg");
+  background: #bb8fce;
 }
 
 .tienda-card h3,
 .tienda-card p {
-  margin-inline: 18px;
+  margin: 0;
 }
 
-.tienda-card h3 {
-  margin-top: 16px;
-  margin-bottom: 6px;
-}
-
-.tienda-card p {
-  margin-top: 0;
-  margin-bottom: 18px;
-}
-
-/* =========================================================
-   CONTACTO
-   ========================================================= */
 .contacto {
   width: min(1100px, 90%);
   margin: 56px auto;
@@ -225,13 +200,14 @@ main {
 
 .contacto-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: stretch;
+  grid-template-columns: 1fr 1fr;
   gap: 32px;
+  align-items: stretch;
 }
 
 .contacto-formulario {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -239,63 +215,29 @@ main {
   margin: 0 0 8px;
 }
 
-.contacto-formulario label {
-  font-weight: 700;
-}
-
 .contacto-formulario input,
 .contacto-formulario textarea {
   width: 100%;
   border: 1px solid #52615c;
-  border-radius: 4px;
   padding: 10px;
   font: inherit;
   background: #fff;
 }
 
-.contacto-formulario textarea {
-  resize: vertical;
-}
-
 .contacto-formulario button {
-  justify-self: start;
-  min-width: 120px;
+  align-self: flex-start;
   border: 0;
-  border-radius: 4px;
-  padding: 12px 24px;
-  font: inherit;
-  font-weight: 700;
-  color: #fff;
-  background: #52615c;
+  padding: 10px 20px;
+  background: #bb8fce;
+  color: #000;
   cursor: pointer;
-}
-
-.contacto-formulario button:hover,
-.contacto-formulario button:focus-visible {
-  background: #38443f;
 }
 
 .contacto-foto {
   width: 100%;
   height: 100%;
-  min-height: 330px;
+  min-height: 280px;
   object-fit: cover;
-}
-
-.footer-social {
-  display: flex;
-  gap: 12px;
-}
-
-.footer-social a {
-  display: inline-grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  font-size: 0.75rem;
-  font-weight: 700;
 }
 
 /* =========================================================
@@ -362,15 +304,17 @@ main {
     width: 100%;
   }
 
-  .skatepark-item h3 {
+  .skatepark-info h3 {
     font-size: 1.25rem;
   }
 
-  .site-footer {
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-    text-align: center;
+  .tiendas-grid,
+  .contacto-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacto-foto {
+    min-height: 220px;
   }
 
   .main-nav {
@@ -378,35 +322,17 @@ main {
   }
 
   .main-nav span {
-    border-right: 0;
     border-bottom: 1px solid rgba(82, 97, 92, 0.35);
   }
 
-  .main-nav span:nth-last-child(2) {
-    border-bottom: 0;
-  }
-
-  .main-nav span:last-child {
+  .main-nav span:nth-last-child(1) {
     grid-column: 1 / -1;
-    border-bottom: 0;
   }
 
-  .tiendas,
-  .contacto {
-    width: 92%;
-    margin-block: 32px;
-  }
-
-  .tiendas-grid {
+  .site-footer {
     grid-template-columns: 1fr;
-  }
-
-  .contacto-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contacto-foto {
-    min-height: 220px;
+    text-align: center;
+    justify-items: center;
   }
 }
 
@@ -440,22 +366,6 @@ main {
 
   .skatepark-item h3 {
     font-size: 1.3rem;
-  }
-
-  .tiendas-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .tienda-card:last-child {
-    grid-column: 1 / -1;
-  }
-
-  .contacto-grid {
-    gap: 24px;
-  }
-
-  .contacto-foto {
-    min-height: 300px;
   }
 }
 

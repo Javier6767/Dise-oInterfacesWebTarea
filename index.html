@@ -9,6 +9,13 @@
   <body>
     <header class="site-header">
       <span class="brand">Skate en Asturias</span>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <span>Inicio</span>
+        <span>Competición</span>
+        <span>Skateparks</span>
+        <span>Tiendas</span>
+        <span>Contacto</span>
+      </nav>
     </header>
 
     <main>
@@ -89,7 +96,12 @@
               alt="Vista del skatepark de Avilés"
               loading="lazy"
             />
-            <h3>Skatepark de Avilés</h3>
+            <div class="skatepark-info">
+              <h3>Skatepark de Avilés</h3>
+              <p>
+                Un punto de encuentro para practicar skate y compartir trucos.
+              </p>
+            </div>
           </article>
           <article class="skatepark-item">
             <img
@@ -97,7 +109,10 @@
               alt="Skatepark de Gijón junto al paseo marítimo"
               loading="lazy"
             />
-            <h3>Skatepark de Gijón</h3>
+            <div class="skatepark-info">
+              <h3>Skatepark de Gijón</h3>
+              <p>Un espacio amplio para patinar cerca del paseo marítimo.</p>
+            </div>
           </article>
           <article class="skatepark-item">
             <img
@@ -105,7 +120,10 @@
               alt="Skatepark de Oviedo rodeado de zonas verdes"
               loading="lazy"
             />
-            <h3>Skatepark de Oviedo</h3>
+            <div class="skatepark-info">
+              <h3>Skatepark de Oviedo</h3>
+              <p>Una pista rodeada de naturaleza para disfrutar del skate.</p>
+            </div>
           </article>
           <article class="skatepark-item">
             <img
@@ -113,7 +131,12 @@
               alt="Skatepark de Las Vegas"
               loading="lazy"
             />
-            <h3>Skatepark de Las Vegas</h3>
+            <div class="skatepark-info">
+              <h3>Skatepark de Las Vegas</h3>
+              <p>
+                Un buen lugar para entrenar y pasar la tarde sobre la tabla.
+              </p>
+            </div>
           </article>
           <article class="skatepark-item">
             <img
@@ -121,15 +144,69 @@
               alt="Skatepark de Salinas"
               loading="lazy"
             />
-            <h3>Skatepark de Salinas</h3>
+            <div class="skatepark-info">
+              <h3>Skatepark de Salinas</h3>
+              <p>
+                Una pista junto a la costa para disfrutar de una sesión de
+                skate.
+              </p>
+            </div>
           </article>
+        </div>
+      </section>
+
+      <section class="tiendas" aria-labelledby="tiendas-title">
+        <h2 id="tiendas-title">Tiendas de skate en Asturias</h2>
+        <div class="tiendas-grid">
+          <article class="tienda-card">
+            <div class="tienda-foto" aria-label="Foto de una tienda"></div>
+            <h3>Onefoot</h3>
+            <p>Avilés — datos de ubicación pendientes.</p>
+          </article>
+          <article class="tienda-card">
+            <div class="tienda-foto" aria-label="Foto de una tienda"></div>
+            <h3>Distrito Rojo</h3>
+            <p>Asturias — datos de ubicación pendientes.</p>
+          </article>
+          <article class="tienda-card">
+            <div class="tienda-foto" aria-label="Foto de una tienda"></div>
+            <h3>Cerra</h3>
+            <p>Asturias — datos de ubicación pendientes.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contacto" aria-labelledby="contacto-title">
+        <div class="contacto-grid">
+          <form class="contacto-formulario">
+            <h2 id="contacto-title">Contacto</h2>
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" />
+
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" />
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+
+            <button type="submit">Enviar</button>
+          </form>
+
+          <img
+            class="contacto-foto"
+            src="imagenes/skateparkAviles.jpg"
+            alt="Pista de skate para la sección de contacto"
+          />
         </div>
       </section>
     </main>
 
-    <footer class="site-footer" id="contacto">
+    <footer class="site-footer" id="contacto-pie">
       <span>© 2026 Skate en Asturias</span>
-      <span>Contacto</span>
+      <div class="footer-social" aria-label="Redes sociales">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+      </div>
     </footer>
   </body>
 </html>

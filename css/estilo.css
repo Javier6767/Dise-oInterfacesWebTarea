@@ -136,6 +136,169 @@ main {
 }
 
 /* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+.main-nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  margin-top: 18px;
+  border-block: 1px solid rgba(82, 97, 92, 0.35);
+}
+
+.main-nav span {
+  padding: 10px 8px;
+  text-align: center;
+  font-weight: 700;
+  border-right: 1px solid rgba(82, 97, 92, 0.35);
+}
+
+.main-nav span:last-child {
+  border-right: 0;
+}
+
+/* =========================================================
+   TIENDAS
+   ========================================================= */
+.tiendas {
+  width: min(1100px, 90%);
+  margin: 56px auto;
+}
+
+.tiendas h2 {
+  margin-bottom: 24px;
+}
+
+.tiendas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.tienda-card {
+  overflow: hidden;
+  border: 1px solid rgba(82, 97, 92, 0.25);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.tienda-foto {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-position: center;
+  background-size: cover;
+}
+
+.tienda-card:nth-child(1) .tienda-foto {
+  background-image: url("../imagenes/onefoot.jpg");
+}
+
+.tienda-card:nth-child(2) .tienda-foto {
+  background-image: url("../imagenes/distritorojo.jpg");
+}
+
+.tienda-card:nth-child(3) .tienda-foto {
+  background-image: url("../imagenes/cerra.jpg");
+}
+
+.tienda-card h3,
+.tienda-card p {
+  margin-inline: 18px;
+}
+
+.tienda-card h3 {
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.tienda-card p {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+.contacto {
+  width: min(1100px, 90%);
+  margin: 56px auto;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 32px;
+}
+
+.contacto-formulario {
+  display: grid;
+  gap: 10px;
+}
+
+.contacto-formulario h2 {
+  margin: 0 0 8px;
+}
+
+.contacto-formulario label {
+  font-weight: 700;
+}
+
+.contacto-formulario input,
+.contacto-formulario textarea {
+  width: 100%;
+  border: 1px solid #52615c;
+  border-radius: 4px;
+  padding: 10px;
+  font: inherit;
+  background: #fff;
+}
+
+.contacto-formulario textarea {
+  resize: vertical;
+}
+
+.contacto-formulario button {
+  justify-self: start;
+  min-width: 120px;
+  border: 0;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: #52615c;
+  cursor: pointer;
+}
+
+.contacto-formulario button:hover,
+.contacto-formulario button:focus-visible {
+  background: #38443f;
+}
+
+.contacto-foto {
+  width: 100%;
+  height: 100%;
+  min-height: 330px;
+  object-fit: cover;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social a {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* =========================================================
    MEDIA QUERIES (diseño responsive)
    - Móvil:     hasta 600px
    - Tablet:    de 601px a 1024px
@@ -209,6 +372,42 @@ main {
     gap: 8px;
     text-align: center;
   }
+
+  .main-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-nav span {
+    border-right: 0;
+    border-bottom: 1px solid rgba(82, 97, 92, 0.35);
+  }
+
+  .main-nav span:nth-last-child(2) {
+    border-bottom: 0;
+  }
+
+  .main-nav span:last-child {
+    grid-column: 1 / -1;
+    border-bottom: 0;
+  }
+
+  .tiendas,
+  .contacto {
+    width: 92%;
+    margin-block: 32px;
+  }
+
+  .tiendas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacto-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacto-foto {
+    min-height: 220px;
+  }
 }
 
 /* ---------- TABLET (601px - 1024px) ---------- */
@@ -241,6 +440,22 @@ main {
 
   .skatepark-item h3 {
     font-size: 1.3rem;
+  }
+
+  .tiendas-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tienda-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .contacto-grid {
+    gap: 24px;
+  }
+
+  .contacto-foto {
+    min-height: 300px;
   }
 }
 

@@ -55,7 +55,7 @@ main {
   display: grid;
   grid-template-columns: 1fr auto;
   background: #bb8fce;
-  color: #52615c;
+  color: #000000;
 }
 
 .footer-social {

@@ -183,14 +183,10 @@ body {
 }
 
 .tienda-foto {
+  display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
-  background: #bb8fce;
-}
-
-.tienda-card h3,
-.tienda-card p {
-  margin: 0;
+  object-fit: cover;
 }
 
 .contacto {

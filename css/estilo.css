@@ -12,6 +12,10 @@ body {
   background: #e8daef;
 }
 
+main {
+  flex: 1;
+}
+
 .site-header,
 .site-footer {
   display: flex;
@@ -60,9 +64,20 @@ body {
 }
 
 .footer-social a {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
   color: #52615c;
   font-weight: 700;
   text-decoration: none;
+}
+
+.footer-social img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand {
@@ -182,6 +197,11 @@ body {
   gap: 8px;
 }
 
+.tienda-card h3,
+.tienda-card p {
+  margin: 0;
+}
+
 .tienda-foto {
   display: block;
   width: 100%;
@@ -246,7 +266,7 @@ body {
 /* ---------- MÓVIL (hasta 600px) ---------- */
 @media (max-width: 600px) {
   .site-header {
-    padding-block: 20px;
+    padding: 20px 0 0;
   }
 
   .brand {
@@ -254,8 +274,27 @@ body {
     text-align: center;
   }
 
+  .main-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-nav span {
+    border-bottom: 1px solid rgba(82, 97, 92, 0.35);
+  }
+
+  .main-nav span:nth-child(even) {
+    border-right: 0;
+  }
+
+  .main-nav span:last-child {
+    grid-column: 1 / -1;
+    border-bottom: 0;
+  }
+
   .video-intro,
-  .skateparks {
+  .skateparks,
+  .tiendas,
+  .contacto {
     width: 92%;
   }
 
@@ -277,7 +316,9 @@ body {
     margin-block: 20px;
   }
 
-  .skateparks {
+  .skateparks,
+  .tiendas,
+  .contacto {
     margin-block: 32px;
   }
 
@@ -313,18 +354,6 @@ body {
     min-height: 220px;
   }
 
-  .main-nav {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .main-nav span {
-    border-bottom: 1px solid rgba(82, 97, 92, 0.35);
-  }
-
-  .main-nav span:nth-last-child(1) {
-    grid-column: 1 / -1;
-  }
-
   .site-footer {
     grid-template-columns: 1fr;
     text-align: center;
@@ -348,7 +377,9 @@ body {
     width: 100%;
   }
 
-  .skateparks {
+  .skateparks,
+  .tiendas,
+  .contacto {
     width: 92%;
   }
 
@@ -360,8 +391,24 @@ body {
     width: 48%;
   }
 
-  .skatepark-item h3 {
+  .skatepark-info h3 {
     font-size: 1.3rem;
+  }
+
+  .tiendas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tienda-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .contacto-grid {
+    gap: 24px;
+  }
+
+  .contacto-foto {
+    min-height: 300px;
   }
 }
 
@@ -373,7 +420,7 @@ body {
   }
 
   .site-header {
-    padding-block: 36px;
+    padding: 36px 0 0;
   }
 
   .brand {
@@ -397,7 +444,9 @@ body {
     width: min(900px, 80%);
   }
 
-  .skateparks {
+  .skateparks,
+  .tiendas,
+  .contacto {
     width: min(1200px, 85%);
   }
 
@@ -413,7 +462,7 @@ body {
     width: min(50%, 580px);
   }
 
-  .skatepark-item h3 {
+  .skatepark-info h3 {
     font-size: 1.8rem;
   }
 
